@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Down Dating App - Honest Dating</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'down-pink': '#FF006A',
+                        'down-purple': '#A734BD',
+                        'down-dark': '#120212', /* Deep background color */
+                        'card-bg': 'rgba(255, 255, 255, 0.05)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(90deg, #A734BD 0%, #FF006A 100%)',
+                        'text-gradient': 'linear-gradient(90deg, #FF006A 0%, #FA00FF 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #120212;
+            /* Fallback/Main dark bg */
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #FF006A 0%, #FA00FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#120212] text-white">
+
+    <!-- Navbar -->
+    <nav class="container mx-auto px-6 py-6 flex items-center justify-between relative z-50">
+        <a href="#" class="flex items-center">
+            <img src="img/down_image.png" alt="DOWN Logo" class="h-8 md:h-10">
+        </a>
+
+        <!-- Mobile Menu Button (Hidden on Desktop) -->
+        <button class="md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#" class="hover:text-white transition">FAQ</a>
+            <a href="#" class="hover:text-white transition">Dating Advice</a>
+            <a href="#" class="hover:text-white transition">DOWN Wiki</a>
+            <a href="#" class="hover:text-white transition">Careers</a>
+            <a href="#" class="hover:text-white transition">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full min-h-[90vh] flex items-center overflow-hidden">
+        <!-- Background Gradient Image (Absolute Left) -->
+        <div class="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+            <!-- Using the specific positioning requested: left-0, top-0, no margin. 
+                  Adjusting size to match impact. User said "radial gradient picture that should be started from the very left". 
+                  Assuming 'hero_dark_gradient.png' is that picture or I simulate it. 
+                  Let's use the image provided but strictly positioned. -->
+            <img src="img/hero_dark_gradient.png"
+                class="absolute top-0 left-[-20%] md:left-[-10%] w-[150%] max-w-none md:w-[60%] h-auto opacity-100 mix-blend-screen pointer-events-none"
+                style="transform: translateY(-20%); filter: blur(80px);" alt="">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <!-- Phone (Left) -->
+            <div class="relative flex justify-center md:justify-end order-1 md:order-1">
+                <div class="relative w-[280px] md:w-[350px]">
+                    <img src="img/hero_phone.png" alt="App Interface" class="w-full relative z-10 drop-shadow-2xl">
+
+                    <!-- Floating Stickers (Simulated from previous code) -->
+                    <img src="img/current_on_phone.png"
+                        class="absolute top-[15%] right-[-20px] w-12 z-20 animate-bounce"
+                        style="animation-duration: 3s;">
+                    <img src="img/heart on the phone.png"
+                        class="absolute bottom-[20%] left-[-30px] w-14 z-20 animate-bounce"
+                        style="animation-duration: 4s;">
+                    <img src="img/fire_on_the_phone.png"
+                        class="absolute top-[40%] right-[-40px] w-12 z-20 animate-bounce"
+                        style="animation-duration: 2.5s;">
+                </div>
+            </div>
+
+            <!-- Text (Right) -->
+            <div class="text-center md:text-left order-2 md:order-2">
+                <img src="img/hero_title_text.png" alt="Date On Easy Mode" class="h-16 md:h-24 mx-auto md:mx-0 mb-6">
+                <!-- Fallback if text image fails/is bad quality -->
+                <!-- <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">Date On <br> <span class="text-gradient">Easy Mode</span></h1> -->
+
+                <p class="text-xl text-gray-300 mb-8 max-w-md mx-auto md:mx-0">
+                    The honest dating app that puts YOU in control! We encourage users to be honest to form a real,
+                    trustworthy, and transparent connection.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <!-- App Store -->
+                    <button
+                        class="bg-black/40 border border-white/20 hover:bg-white/10 transition rounded-xl px-6 py-3 flex items-center space-x-3 group">
+                        <svg class="w-8 h-8 text-white group-hover:text-down-pink transition" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+                        </svg>
+                        <div class="text-left">
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400">Download on the</div>
+                            <div class="text-lg font-bold leading-none">App Store</div>
+                        </div>
+                    </button>
+
+                    <!-- Play Store -->
+                    <button
+                        class="bg-black/40 border border-white/20 hover:bg-white/10 transition rounded-xl px-6 py-3 flex items-center space-x-3 group">
+                        <svg class="w-8 h-8 md:w-8 md:h-8" viewBox="0 0 16 16">
+                            <path d="M6.846 8L1 2.603V13.396L6.846 8Z" fill="#2196F3" />
+                            <path d="M1 13.396L6.846 8l4.682 2.69-3.945 2.19L1 13.396c.201.405 1.36 1.61 2.303 1.055Z"
+                                fill="#FA2D48" />
+                            <path d="M1 2.603l6.553 6.05L11.528 5.04 3.333.215C2.39-.341 1.231.24 1.03 1.27L1 2.603Z"
+                                fill="#00E277" />
+                            <path
+                                d="M11.528 5.04l-3.945 3.64 3.945 3.64 2.694-1.586c1.037-.61 1.037-2.137 0-2.748L11.528 5.04Z"
+                                fill="#FFC107" />
+                        </svg>
+                        <div class="text-left">
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400">GET IT ON</div>
+                            <div class="text-lg font-bold leading-none">Google Play</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Section (Logos/Features Recreated) -->
+    <!-- Icons Section: What DOWN is All About -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">What <span class="text-gradient">DOWN</span> is
+                All About</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Private -->
+                <div class="glass-card rounded-3xl p-8 text-center hover:bg-white/10 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-yellow-400/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-yellow-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Private</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Your safety is important to us. We make sure your
+                        DOWN App experience is secure and honest.</p>
+                </div>
+
+                <!-- Authentic -->
+                <div class="glass-card rounded-3xl p-8 text-center hover:bg-white/10 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-400">
+                        <!-- Multi-gender symbol simulation -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            <!-- Placeholder for complex gender symbol -->
+                            <circle cx="12" cy="12" r="8" opacity="0.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Authentic</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We have an open mind; sexuality is a healthy,
+                        natural, and crucial aspect in relationships.</p>
+                </div>
+
+                <!-- Transparent -->
+                <div class="glass-card rounded-3xl p-8 text-center hover:bg-white/10 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-down-pink">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Transparent</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">We encourage users to be honest to form a real,
+                        trustworthy, and transparent connection.</p>
+                </div>
+
+                <!-- Global -->
+                <div class="glass-card rounded-3xl p-8 text-center hover:bg-white/10 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Global</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Get to know singles from all over the world!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why You Need to Get DOWN (Alternating Features) -->
+    <section class="py-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-24">Why You Need to Get <span
+                    class="text-gradient">DOWN</span></h2>
+
+            <!-- Feature 1: Honest And Time Saving -->
+            <div class="flex flex-col md:flex-row items-center gap-16 mb-32">
+                <div class="w-full md:w-1/2 relative flex justify-center">
+                    <div class="absolute inset-0 bg-down-purple/20 blur-[60px] rounded-full"></div>
+                    <!-- Reusing hero phone or existing group images if available. 
+                          User asked to recreate using icons/images. Let's use the layout from reference: Phone Left or Right. -->
+                    <img src="img/hero_phone.png" class="relative z-10 w-[280px] md:w-[320px] rotate-[-6deg]"
+                        alt="App Screen">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">Honest And Time Saving</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        With DOWN Dating, you don't need to wander if your dating app matches are just trying to hook up
+                        or go on a date — we have it all solved for you!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Chat Around The World (Reversed) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-16 mb-32">
+                <div class="w-full md:w-1/2 relative flex justify-center">
+                    <div class="absolute inset-0 bg-blue-500/20 blur-[60px] rounded-full"></div>
+                    <!-- Using Frame 74 or similar if it depicts map/chat, otherwise placeholder phone -->
+                    <img src="img/Frame 74.png" class="relative z-10 w-[280px] md:w-[320px] rounded-[3rem] shadow-2xl"
+                        alt="Chat Map">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">Chat Around The World</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Chat and date internationally with Snap Match - a random chat matchmaking system that connects
+                        you with someone online.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Incredible Chat Experience -->
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 relative flex justify-center">
+                    <div class="absolute inset-0 bg-down-pink/20 blur-[60px] rounded-full"></div>
+                    <img src="img/hero_phone.png" class="relative z-10 w-[280px] md:w-[320px]" alt="Chat Experience">
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-6">Incredible Chat Experience</h3>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
+                        <span class="px-4 py-2 rounded-full glass-card text-sm">Icebreakers</span>
+                        <span class="px-4 py-2 rounded-full glass-card text-sm">Flirts</span>
+                        <span class="px-4 py-2 rounded-full glass-card text-sm">Photo</span>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Play fun games in your chats to break the ice, like "Photo Challenge" and "Would You Rather?"!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-b from-transparent to-[#000000]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+
+                <div class="w-full md:w-1/3">
+                    <h2
+                        class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-down-purple to-down-pink">
+                        What Real <br> DOWN Users <br> Say About <br> The App
+                    </h2>
+                </div>
+
+                <div class="w-full md:w-2/3 grid gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="text-down-pink text-5xl font-serif mb-4">“</div>
+                        <p class="text-gray-300 mb-6">The most user friendly application out there on the web, never had
+                            an issue and found attractive people. would totally recommend Down app to everyone, its so
+                            easy to use and they give you great matches!</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <!-- Placeholder Avatar -->
+                                <div class="w-12 h-12 rounded-full bg-gray-600 overflow-hidden">
+                                    <img src="img/hero_phone.png" class="w-full h-full object-cover opacity-50">
+                                    <!-- Using hero phone as placeholder if no avatar -->
+                                </div>
+                                <div>
+                                    <div class="font-bold">Angelina Watson</div>
+                                    <div class="text-xs text-gray-500">Down User</div>
+                                </div>
+                            </div>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="glass-card p-8 rounded-3xl opacity-60 hover:opacity-100 transition">
+                        <div class="text-down-purple text-5xl font-serif mb-4">“</div>
+                        <p class="text-gray-300 mb-6">Ever since joining I had success. It's so easy when you can say
+                            what you want straight away without having a bunch of pointless conversation.</p>
+                        <!-- Simplified footer for second card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Logos Section -->
+    <section class="py-16 text-center border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <div class="h-px bg-down-purple w-16"></div>
+                <h3
+                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-down-purple to-down-pink">
+                    Press</h3>
+                <div class="h-px bg-down-pink w-16"></div>
+            </div>
+
+            <div
+                class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Using Group 103 or similar for press logos if it contains them, or plain text if not -->
+                <img src="img/Group 103.png" alt="Mashable BuzzFeed FastCompany" class="h-12 md:h-16 object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer CTA -->
+    <section class="py-20 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">What Are You Waiting For?</h2>
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-down-pink">Get Down With Us @DownApp</h2>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <!-- App Store -->
+            <button
+                class="bg-black border border-white/30 rounded-xl px-6 py-3 flex items-center space-x-3 hover:scale-105 transition">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z" />
+                </svg>
+                <div class="text-left">
+                    <div class="text-[10px] uppercase tracking-wider text-gray-400">Download on the</div>
+                    <div class="text-lg font-bold leading-none">App Store</div>
+                </div>
+            </button>
+            <!-- Play Store -->
+            <button
+                class="bg-black border border-white/30 rounded-xl px-6 py-3 flex items-center space-x-3 hover:scale-105 transition">
+                <svg class="w-8 h-8" viewBox="0 0 16 16">
+                    <path d="M6.846 8L1 2.603V13.396L6.846 8Z" fill="#2196F3" />
+                    <path d="M1 13.396L6.846 8l4.682 2.69-3.945 2.19L1 13.396c.201.405 1.36 1.61 2.303 1.055Z"
+                        fill="#FA2D48" />
+                    <path d="M1 2.603l6.553 6.05L11.528 5.04 3.333.215C2.39-.341 1.231.24 1.03 1.27L1 2.603Z"
+                        fill="#00E277" />
+                    <path d="M11.528 5.04l-3.945 3.64 3.945 3.64 2.694-1.586c1.037-.61 1.037-2.137 0-2.748L11.528 5.04Z"
+                        fill="#FFC107" />
+                </svg>
+                <div class="text-left">
+                    <div class="text-[10px] uppercase tracking-wider text-gray-400">GET IT ON</div>
+                    <div class="text-lg font-bold leading-none">Google Play</div>
+                </div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <img src="img/header_logo.png" alt="DOWN" class="h-8 mb-4 md:mb-0">
+                <div class="flex gap-8 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Home</a>
+                    <a href="#" class="hover:text-white">FAQ</a>
+                    <a href="#" class="hover:text-white">Dating Advice</a>
+                    <a href="#" class="hover:text-white">DOWN Wiki</a>
+                    <a href="#" class="hover:text-white">Careers</a>
+                    <a href="#" class="hover:text-white">Contact Us</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <div>&copy; 2022 Down. All Rights Reserved</div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-400">Privacy & Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
